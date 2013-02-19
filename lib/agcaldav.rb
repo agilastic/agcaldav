@@ -1,4 +1,5 @@
 require 'net/https'
+require 'net/http/digest_auth'
 require 'uuid'
 require 'rexml/document'
 require 'rexml/xpath'

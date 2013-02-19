@@ -18,8 +18,10 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'icalendar'
   s.add_runtime_dependency 'uuid'
   s.add_runtime_dependency 'builder'
+  s.add_runtime_dependency 'net-http-digest_auth'
   s.add_development_dependency "rspec"  
-  s.add_development_dependency "fakeweb"  
+  s.add_development_dependency "fakeweb"
+  
 
 
   s.description = <<-DESC

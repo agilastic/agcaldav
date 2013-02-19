@@ -127,5 +127,5 @@ MIT
 6. Enjoy a refreshing Club Mate and wait
 
 [c]: https://github.com/agilastic/agcaldav/contributors
-[1]: https://github.com/agilastic/agcaldav/pull/
+[1]: https://github.com/agilastic/agcaldav/pulls/
 

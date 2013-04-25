@@ -133,7 +133,8 @@ module AgCalDAV
         res = http.request( req )
       }
       errorhandling res
-      if res.code.to_i == 200
+      # accept any success code
+      if res.code.to_i.between?(200,299)
         return true
       else
         return false
@@ -150,8 +151,8 @@ module AgCalDAV
         dtstart       DateTime.parse(event[:start])
         dtend         DateTime.parse(event[:end])
         categories    event[:categories]# Array
-        contacts       event[:contacts] # Array
-        attendees      event[:attendees]# Array
+        contacts      event[:contacts] # Array
+        attendees     event[:attendees]# Array
         duration      event[:duration]
         summary       event[:title]
         description   event[:description]
@@ -159,6 +160,7 @@ module AgCalDAV
         location      event[:location]
         geo_location  event[:geo_location]
         status        event[:status]
+        url           event[:url]
       end
       cstring = c.to_ical
       res = nil
@@ -300,6 +302,7 @@ module AgCalDAV
       	
       }
       begin
+        errorhandling res
       	Icalendar.parse(res.body)
       rescue
       	return false
